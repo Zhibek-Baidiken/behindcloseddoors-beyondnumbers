@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind Closed Doors, Beyond Numbers</title>
+<meta name="description" content="Domestic violence reporting and access to support across Kazakhstan's regions. PLS 419.">
+<style>
+:root{--bg:#0b0b0d;--ink:#a9a7ad;--dim:#5f5d66;--head:#d4d1d8;--bruise:#4a2d5c;--bruise2:#7a4a86;--sick:#8a8a52;--line:#1d1c21}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.75 Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 40%,#000 100%);opacity:.8;z-index:5}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+section{padding:14vh 0;border-bottom:1px solid var(--line)}
+h1,h2{font-weight:400;color:var(--head);line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);margin:0 0 1.2rem}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 2rem}
+.label{font:12px/1 ui-monospace,Menlo,monospace;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-bottom:1.5rem;display:block}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;border:0}
+.hero h1 em{color:var(--bruise2);font-style:normal}
+.hero p{color:var(--dim);max-width:34ch}
+.scroll{position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);font:12px ui-monospace,monospace;letter-spacing:.3em;color:var(--dim);animation:pulse 4s infinite}
+@keyframes pulse{50%{opacity:.2}}
+.big{font-size:clamp(4rem,16vw,9rem);color:var(--head);line-height:1;margin:0;font-variant-numeric:tabular-nums}
+.stat{margin-bottom:5rem}
+.stat p{margin:.5rem 0 0;color:var(--dim)}
+.src{font:12px ui-monospace,monospace;color:var(--dim);letter-spacing:.05em}
+.phrase{font-size:clamp(1.5rem,4.5vw,2.4rem);color:var(--head);margin:0 0 .3rem;opacity:.85}
+.phrase small{display:block;font:13px ui-monospace,monospace;color:var(--dim);letter-spacing:.1em;margin-bottom:2.2rem}
+blockquote{margin:2.5rem 0;padding-left:1.4rem;border-left:2px solid var(--bruise);color:var(--head);font-style:italic}
+.fig{margin:3rem -24px}
+.fig img{width:100%;display:block;filter:grayscale(.55) brightness(.55) contrast(1.1)}
+.fig figcaption{padding:.8rem 24px;font:12px/1.6 ui-monospace,monospace;color:var(--dim)}
+.tabs{display:flex;gap:1rem;margin:0 0 2rem}
+.tabs button{background:none;border:1px solid var(--line);color:var(--dim);padding:.5rem 1.2rem;font:13px ui-monospace,monospace;letter-spacing:.15em;cursor:pointer}
+.tabs button[aria-pressed=true]{color:var(--head);border-color:var(--bruise2);background:#17111c}
+.total{font-size:clamp(2.5rem,9vw,4.5rem);color:var(--head);margin:0 0 .3rem}
+.bars{margin-top:2rem}
+.row{display:grid;grid-template-columns:130px 1fr 44px;gap:10px;align-items:center;font:13px ui-monospace,monospace;padding:3px 0}
+.row .n{color:var(--ink)}.row .v{text-align:right;color:var(--dim)}
+.track{height:12px;background:#121115;display:flex}
+.track i{display:block;height:100%;width:0;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.a{background:#8a8a52}.b{background:#4a2d5c}.c{background:#2b1a36}
+.legend{display:flex;gap:1.2rem;font:12px ui-monospace,monospace;color:var(--dim);margin-top:1rem;flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;margin-right:6px}
+.legend .la::before{background:#8a8a52}.legend .lb::before{background:#4a2d5c}.legend .lc::before{background:#2b1a36;outline:1px solid #4a2d5c}
+.rq{font-size:clamp(1.5rem,4vw,2.1rem);color:var(--head);font-style:italic}
+.fade{opacity:0;transform:translateY(14px);transition:opacity 1.6s,transform 1.6s}
+.fade.in{opacity:1;transform:none}
+footer{padding:12vh 0 18vh;color:var(--dim);font-size:15px}
+footer b{color:var(--head);font-weight:400}
+a{color:var(--bruise2)}
+@media(max-width:560px){.row{grid-template-columns:96px 1fr 36px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.fade,.track i{transition:none}.scroll{animation:none}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;gap:1.4rem;justify-content:center;padding:.9rem 12px;background:linear-gradient(#0b0b0df0,#0b0b0d00);font:11px ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--dim);text-decoration:none}nav a:hover{color:var(--head)}
+h3{font-weight:400;color:var(--head);font-size:1.3rem;margin:2.6rem 0 .8rem}
+.empty{border:1px dashed #2a2830;padding:3rem 1.5rem;text-align:center;color:var(--dim);font:13px/1.8 ui-monospace,monospace;margin:2.5rem 0}
+.empty b{display:block;color:#3b3942;font-size:3rem;font-weight:400;font-family:Georgia,serif}
+ul.plain{padding-left:1.2rem}ul.plain li{margin:.5rem 0}
+.proto{border:1px solid #26232c;background:#0f0e12;padding:1.6rem;margin:2rem 0}
+.proto .tag{font:11px ui-monospace,monospace;letter-spacing:.2em;color:var(--sick);margin-bottom:1rem;display:block}
+.proto label{display:block;font:12px ui-monospace,monospace;color:var(--dim);margin:1.2rem 0 .4rem;letter-spacing:.1em}
+select,input[type=range]{width:100%;background:#17151b;color:var(--head);border:1px solid #2a2830;padding:.6rem;font:15px Georgia,serif}
+input[type=range]{padding:0;accent-color:#7a4a86}
+.opts{display:flex;flex-wrap:wrap;gap:.6rem}
+.opts button{background:none;border:1px solid #2a2830;color:var(--ink);padding:.55rem 1rem;font:15px Georgia,serif;cursor:pointer;text-align:left}
+.opts button[aria-pressed=true]{border-color:var(--bruise2);background:#17111c;color:var(--head)}
+.result{margin-top:1.5rem;padding:1rem 1.2rem;border-left:2px solid var(--bruise);background:#121016;font-size:16px}
+.result small{display:block;color:var(--dim);font:12px ui-monospace,monospace;margin-top:.6rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cols div{border-top:1px solid #2a2830;padding-top:1rem;font-size:16px}
+.cols b{display:block;color:var(--head);font-weight:400;margin-bottom:.4rem}
+@media(max-width:560px){.cols{grid-template-columns:1fr}}
+.cost{font-size:clamp(2.2rem,8vw,4rem);color:var(--head);margin:0}
+.brow{display:grid;grid-template-columns:1fr 60px;gap:10px;font:13px ui-monospace,monospace;padding:6px 0;border-bottom:1px solid var(--line)}
+.brow span:last-child{text-align:right;color:var(--head)}
+.brow.sum{color:var(--head)}
+.bbar{grid-column:1/-1;height:5px;background:#121115}.bbar i{display:block;height:100%;background:var(--bruise2)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:1.5rem 0}
+th,td{text-align:left;vertical-align:top;padding:.8rem .6rem;border-bottom:1px solid var(--line)}
+th{font:11px ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:400}
+td:first-child{color:var(--head);white-space:nowrap}
+.tw{overflow-x:auto}
+.btn{background:none;border:1px solid var(--bruise2);color:var(--head);padding:.6rem 1.2rem;font:13px ui-monospace,monospace;letter-spacing:.1em;cursor:pointer;margin-top:1rem}
+.pill{display:inline-block;font:11px ui-monospace,monospace;letter-spacing:.15em;color:var(--sick);border:1px solid #3a3a22;padding:.2rem .6rem;margin-bottom:1rem}
+section{scroll-margin-top:0}
+</style>
+</head>
+<body>
+<nav><a href="#top">Start</a><a href="#data">Data</a><a href="#silent">Silence</a><a href="#research">Research</a><a href="#qorgau">Qorgau AI</a><a href="#costs">Costs</a><a href="#verdict">Verdict</a></nav>
+
+<section class="hero wrap" id="top" style="position:relative">
+  <span class="label">PLS 419 · Kazakhstan</span>
+  <h1>Behind closed doors,<br><em>beyond numbers.</em></h1>
+  <p>Every figure here is a woman who was brave enough to call. Most never do.</p>
+  <div class="scroll">↓</div>
+</section>
+
+<section class="wrap">
+  <div class="stat fade"><p class="big">300</p><p>domestic violence reports received by police <b>every day</b> in 2023.</p></div>
+  <div class="stat fade"><p class="big">80</p><p>women killed by their partners <b>every year</b>.</p></div>
+  <p class="fade">These numbers are the scale of the problem in Kazakhstan. They are also only the part that someone was allowed to count.</p>
+  <span class="src">Source: UN Women</span>
+</section>
+
+<section class="wrap">
+  <span class="label">What she was told</span>
+  <p class="phrase fade">«Бьёт — значит любит»<small>“If he hits you, he loves you.”</small></p>
+  <p class="phrase fade">«Ұят болады!»<small>“It would be shameful!”</small></p>
+  <p class="phrase fade">«Ыдыс-аяқ сылдырламай, үй болмайды»<small>“There is no home where dishes don’t clatter.”</small></p>
+  <p class="fade" style="margin-top:3rem">These are the replies almost every woman in Kazakhstan heard when she cried for help. Domestic violence remains one of the country’s most significant social problems, and it stays silent, held in place by social norms and underreporting. <span class="src">(Kainazarova et al., 2025)</span></p>
+  <p class="fade">In 2017, the article on “infliction of minor bodily harm” was decriminalized and moved into administrative law. Punishment for domestic violence fell to fines or warnings.</p>
+</section>
+
+<section class="wrap">
+  <span class="label">The tradition</span>
+  <h2 class="fade">A new family. An old sentence.</h2>
+  <p class="fade">Married women, hoping to build a life with the people they love, too often become captives of an old and abusive tradition. Proverbs do much of the work.</p>
+  <blockquote class="fade">«Қайтып келген қыз жаман» — “a daughter who returns home is no good.”</blockquote>
+  <p class="fade">Together with “Ұят болады,” sayings like this push women to endure. Many believe every woman suffers the same behind her own door, and so they say nothing, afraid of public judgement. A patriarchal society made women its victims, and then justified what it did to them.</p>
+</section>
+
+<section class="wrap">
+  <span class="label">What is reported</span>
+  <h2 class="fade">68,000, and “in reality the numbers are much higher.”</h2>
+  <p class="fade">In 2021, more than 68,000 cases were officially reported to police. The social project <b>Schitaetsya.kz</b> built this image because words, statistics and histograms are easy to scroll past. A bruise is not.</p>
+  <figure class="fig fade">
+    <img src="assets/wounding-numbers.jpg" alt="Map of Kazakhstan drawn as a bruise on skin, with domestic violence report counts by city in 2021. Oskemen is highest with 10,024.">
+    <figcaption>“Wounding Numbers”, Schitaetsya.kz. Reported cases by city, 2021. Oskemen: 10,024.</figcaption>
+  </figure>
+  <p class="fade">The image names Oskemen as the city with the most reports. Possible causes cited include “low socio-economic development, high level of poverty, low level education” <span class="src">(Mussabekova et al., 2024)</span>. But a high count can also mean a place with better reporting and better support. Silence looks like safety on a chart.</p>
+</section>
+
+<section class="wrap">
+  <span class="label">The scale of the problem</span>
+  <h2 class="fade">The numbers move. What they mean, no one knows.</h2>
+  <div class="stat fade"><p class="big">119,608</p><p>reports in 2017, the year of decriminalization.</p></div>
+  <div class="stat fade"><p class="big">53,223</p><p>reports in 2023.</p></div>
+  <p class="fade">The Bureau of National Statistics tells a different story for violence against women specifically: <b>3,965</b> cases in 2017 and <b>7,441</b> in 2025. The rise may reflect changes in law and reporting, not only in violence. No one can say how much of each.</p>
+  <span class="src">Source: Bureau of National Statistics, stat.gov.kz</span>
+</section>
+
+<section class="wrap">
+  <span class="label">Research question</span>
+  <p class="rq fade">How do domestic violence reporting and access to support systems vary across Kazakhstan’s regions?</p>
+  <p class="fade" style="margin-top:2rem">This study examines legal assistance, state protection of victims, and how support systems are distributed across regions. Kazakhstan is a vast country of large cities and remote rural districts, and the protection available to a woman depends on where she lives. A woman in Astana and a woman in a rural district are not equally likely to be heard, believed, or sheltered.</p>
+</section>
+
+<section class="wrap" id="data">
+  <span class="label">Reported cases of violence against women, by region</span>
+  <h2>Two snapshots, eight years apart.</h2>
+  <div class="tabs" role="group" aria-label="Year">
+    <button data-y="2017" aria-pressed="false">2017</button>
+    <button data-y="2025" aria-pressed="true">2025</button>
+  </div>
+  <p class="total" id="total"></p>
+  <p class="src" id="peak"></p>
+  <div class="bars" id="bars"></div>
+  <div class="legend"><span class="la">Under 18</span><span class="lb">18–39</span><span class="lc">40+</span></div>
+  <p style="margin-top:3rem">In 2017, <b>Almaty region</b> recorded 464 cases, Almaty city 434, Astana 418 and Karaganda region 395. In 2025, the preliminary regional table recorded <b>711 in Shymkent</b>, 634 in Almaty region, and 618 each in Astana and Almaty city.</p>
+  <p>These are absolute numbers, not prevalence rates. Larger populations produce larger counts even when no individual woman is at higher risk. A low number may also mean a woman had nowhere to go to be counted.</p>
+  <p>To compare regions fairly, the project proposes calculating <b>recorded cases per 100,000 female residents</b>, using regional population statistics for each year. Even then, that measures what was recorded, not what happened.</p>
+  <p class="src">7,441 is the number of official reports made by women to law enforcement in 2025 (stat.gov.kz). Source: Committee on Legal Statistics and Special Accounts, General Prosecutor’s Office of the Republic of Kazakhstan, via stat.gov.kz.  The 2017 table lists 17 regions; Abay, Ulytau and Zhetisu did not yet exist.</p>
+</section>
+
+
+<section class="wrap" id="access">
+  <span class="label">Measuring access to support</span>
+  <h2 class="fade">A recorded crime is not a rescue.</h2>
+  <p class="fade">Since the question is about access to protection, crime statistics alone are not enough. We would also need to know where crisis centers, shelters, and legal and psychological assistance actually are.</p>
+  <p class="fade"><b>Availability</b> asks whether a service exists. <b>Accessibility</b> asks whether a person can realistically use it. A shelter may exist in a region but have no free beds. A crisis center may offer legal help but be hours away from the village where she lives. Judging accessibility means looking at location, capacity, distance, eligibility, and the kinds of help offered.</p>
+  <p class="fade">A UN-supported regional programme report looked at how crisis centers in Kazakhstan are paid for. Survey evidence on prevalence existed at the oblast level, but crisis centers were funded from city budgets. The numbers describing the need and the money meeting it were collected at different levels, so no one could easily match them.</p>
+  <div class="empty fade"><b>∅</b>Regional support-service comparison<br>No verified regional data has been obtained yet.<br>The figure is empty because the data is.</div>
+</section>
+
+<section class="wrap" id="silent">
+  <span class="label">Where does the data go silent?</span>
+  <h2 class="fade">What the statistics cannot say.</h2>
+  <p class="fade">Official statistics are valuable, but they give only a partial picture of violence and of access to protection.</p>
+  <ul class="plain fade">
+    <li><b>Many never report.</b> Fear of retaliation, stigma, financial dependence, and not knowing what help exists all keep women quiet.</li>
+    <li><b>A registered case is not a resolved one.</b> The count does not show whether she received effective help.</li>
+    <li><b>National and regional totals hide inequality</b> between cities and villages.</li>
+    <li><b>A number of crisis centers is not a measure of care:</b> it says nothing about capacity, quality, confidentiality, or whether anyone can reach them.</li>
+    <li><b>The rules keep changing.</b> New laws and new statistical categories make years hard to compare.</li>
+  </ul>
+  <p class="fade">These are not merely technical problems. They shape how institutions see need and where they spend. If the data cannot see the barriers, regional inequality stays difficult to measure, and what cannot be measured is easy to ignore.</p>
+  <p class="fade">This project separates what is <b>measured</b>, what can reasonably be <b>inferred</b>, and what remains <b>unknown</b>.</p>
+</section>
+
+<section class="wrap" id="research">
+  <span class="label">Section 3 · Current state of research</span>
+  <h2 class="fade">How can regional inequalities be explained?</h2>
+  <p class="fade">Research falls into three complementary approaches: sociocultural, socioeconomic, and institutional or geographical. Each looks at a different mechanism affecting violence, disclosure, and access to help.</p>
+
+  <h3>Sociocultural explanations</h3>
+  <p>Gender norms, family expectations, and stigma can discourage women from disclosing abuse. Where family unity and reputation come first, help outside the household may feel like betrayal. In Kazakhstan, <i>ұят болады</i> is a starting point for studying how shame and social judgement shape help-seeking.</p>
+  <p>This needs caution. It must not portray Kazakh society as uniform or assume tradition inevitably produces violence. Attitudes differ across social groups and places, and studies are needed to show how.</p>
+
+  <h3>Socioeconomic explanations</h3>
+  <p>Economic dependence, scarce jobs, housing insecurity and transport costs shape whether a woman can leave or reach a professional. These conditions differ across regions, so they may matter for regional inequality.</p>
+  <p>But disadvantage is not a sufficient explanation. Violence occurs in every social group, and poverty may affect the ability to get protection without explaining why abuse happens.</p>
+
+  <h3>Institutional and geographical explanations</h3>
+  <p>Legal protection depends on more than legislation: on enforcement, administrative resources, professional capacity, and available services. A law can apply to the whole country while real access to help varies from one community to the next.</p>
+  <p>The 2024 legal reforms are a chance to ask whether changes in criminal law were followed by better access to services. Legal reform and service provision should be evaluated separately.</p>
+
+  <h3>The research gap</h3>
+  <p>The three approaches show that protection has social, economic and institutional dimensions. Yet how these relate to regional service accessibility has barely been studied. The provisional gap is the limited visibility of comparable regional information linking officially recorded violence to where support services are and whether they can be reached. This gap still has to be verified in the academic literature rather than assumed.</p>
+  <p>The project does not claim causation from descriptive statistics. It aims to identify patterns, limitations, and questions that need further evidence.</p>
+</section>
+
+<section class="wrap" id="qorgau">
+  <span class="label">Section 4 · The AI-assisted solution and its costs</span>
+  <h2 class="fade">Qorgau AI</h2>
+  <p class="rq fade">Know your options. Choose your next step.</p>
+  <p class="fade" style="margin-top:1.5rem">A proposed AI-assisted service that gives information and connects people to <b>verified</b> domestic violence support resources. It does not replace counselors or lawyers.</p>
+
+  <h3>1. How would it work?</h3>
+  <p>Imagine a woman in a rural area who is being abused. She does not trust the police and does not know where to go. She opens the Qorgau website and chooses her region, her language, and the kind of information she needs.</p>
+
+  <div class="proto" id="proto">
+    <span class="tag">ILLUSTRATIVE WEBSITE PROTOTYPE</span>
+    <div style="color:var(--head);font-size:1.4rem">How can we help you?</div>
+    <p style="font-size:15px;color:var(--dim);margin:.4rem 0 0">You can explore information without creating an account. This is a concept demonstration, not a live support service.</p>
+    <label for="pr">CHOOSE YOUR REGION</label>
+    <select id="pr"><option>Turkistan Region</option><option>Almaty Region</option><option>East Kazakhstan Region</option><option>Mangystau Region</option><option>Kyzylorda Region</option><option>Astana</option></select>
+    <label>PREFERRED LANGUAGE</label>
+    <div class="opts" id="pl"><button aria-pressed="true">Қазақша</button><button aria-pressed="false">Русский</button></div>
+    <label>WHAT INFORMATION WOULD YOU LIKE?</label>
+    <div class="opts" id="pi"><button aria-pressed="true">Understand my legal rights</button><button aria-pressed="false">Find local support organizations</button><button aria-pressed="false">Explore options without reporting to police</button></div>
+    <div class="result"><span style="color:var(--dim);font:11px ui-monospace,monospace;letter-spacing:.15em">YOUR SELECTED PATHWAY</span><br><span id="pw"></span>
+    <small>The proposed service would retrieve verified legal information, explain procedures in plain language, and offer access to a qualified professional. This prototype does not connect to real organizations, collect reports, or provide crisis intervention.</small></div>
+  </div>
+
+  <h3>2. Where does AI actually contribute?</h3>
+  <ul class="plain">
+    <li><b>Multilingual explanation.</b> Translate and simplify verified legal and service information in Kazakh and Russian, with human review.</li>
+    <li><b>Information retrieval.</b> Answer questions from a controlled database of verified services and official guidance, rather than generating unsupported legal advice.</li>
+    <li><b>Service navigation.</b> Help users find relevant options from their region and stated needs, without profiling them or predicting their risk.</li>
+  </ul>
+  <p>The system must <b>not</b> classify anyone as a victim, assign a danger score, contact police, or send sensitive conversations to government databases.</p>
+
+  <h3>3. Two sides of one problem</h3>
+  <div class="cols">
+    <div><b>Public data</b>Reported domestic violence, regional differences, trust in legal institutions, and availability of support services.</div>
+    <div><b>Individual support</b>A confidential information service that helps people navigate existing institutions without forcing an immediate decision to report.</div>
+  </div>
+  <p style="margin-top:1.5rem">The analysis may show that reported cases are not a straightforward measure of actual prevalence. Trust in institutions may influence reporting, though the data would have to establish whether that relationship exists. Qorgau would address one barrier only: the difficulty of finding trustworthy information and reaching appropriate help. It would not solve domestic violence, which has deeper social, economic and institutional causes.</p>
+
+  <h3>4. What would it cost?</h3>
+  <p>The proposal is independent civil-society oversight, minimal data collection, no mandatory accounts, and human-reviewed information. A visible quick-exit feature could help, but it would not erase browser history or guarantee safety on a monitored device. The strongest form of the argument may be that government should fund the service without having unrestricted access to users' conversations.</p>
+
+  <h3>Case study: AinoAid</h3>
+  <p>AinoAid was developed through the European IMPROVE project: a multilingual, AI-assisted platform on domestic violence, support options and legal procedures, combining a chatbot with an expert-built knowledge base. Its published evaluation included interviews with <b>80 survivors</b> across five European countries and a usability survey of <b>669 users</b> in Germany. Users rated usability and perceived safety positively. The study also found limits in empathy, in understanding user input, and in giving guidance people could act on.</p>
+  <p>Good usability scores do not show that the technology reduces violence or improves long-term outcomes for survivors. So the Kazakhstan platform would take a narrower role: verified public information, not automated personal counseling.</p>
+</section>
+
+<section class="wrap" id="costs">
+  <span class="label">Estimated first-year budget · pilot in three regions</span>
+  <p class="cost fade">₸30,360,000</p>
+  <p class="src">Qorgau AI · 12 months · illustrative baseline, including 15% contingency · about $60,000–70,000 at an illustrative ₸500 per US dollar</p>
+  <p style="margin-top:2rem">Planning estimates, not vendor quotations. The pilot assumes Qorgau gives verified information in Kazakh and Russian, helps users navigate services, and refers them to human professionals. It would not provide crisis counseling or legal decisions.</p>
+  <div id="budget" style="margin-top:2rem"></div>
+
+  <h3>Adjust the pilot budget</h3>
+  <p style="font-size:16px">See how expanding the number of regions or changing staffing assumptions would move the cost.</p>
+  <div class="proto">
+    <label for="rg" style="margin-top:0">REGIONS COVERED: <b id="rgv" style="color:var(--head)"></b></label>
+    <input type="range" id="rg" min="1" max="10" value="3">
+    <label for="us">ESTIMATED USERS PER MONTH: <b id="usv" style="color:var(--head)"></b></label>
+    <input type="range" id="us" min="100" max="10000" step="100" value="1000">
+    <label for="st">HUMAN OVERSIGHT AND STAFFING LEVEL</label>
+    <select id="st"><option value="0">Lean: limited pilot capacity</option><option value="4800000" selected>Standard: regular human review</option><option value="7200000">Expanded: greater review and outreach capacity</option></select>
+    <p style="margin:1.5rem 0 0;font:11px ui-monospace,monospace;letter-spacing:.15em;color:var(--dim)">SCENARIO ESTIMATE · FIRST YEAR</p>
+    <p class="cost" id="scen"></p>
+    <p class="src" style="margin-top:.6rem">Simplified model with hypothetical unit costs, including ₸50 per user-month of variable infrastructure. Not a supplier quote or a forecast of demand.</p>
+    <button class="btn" id="cp">Copy scenario estimate</button>
+  </div>
+
+  <h3>Costs beyond money</h3>
+  <p>Five dimensions, each of which the proposal has to answer.</p>
+  <div class="tw"><table>
+    <tr><th>Dimension</th><th>The question</th><th>Costs and risks</th></tr>
+    <tr><td>Environmental</td><td>How much electricity, computing capacity and water would hosting and running the AI need?</td><td>Electricity for inference and hosting, cooling-related water use, Kazakhstan's electricity mix. Real consumption needs provider-specific measurement.</td></tr>
+    <tr><td>Economic</td><td>Who funds it, verifies service information, and pays for upkeep?</td><td>Development, maintenance, security, staffing, outreach, and the ongoing cost of keeping referral information accurate.</td></tr>
+    <tr><td>Labor</td><td>Would counselors face more referrals? Who reviews AI answers and updates translations?</td><td>Counselors, translators, legal reviewers, cybersecurity staff, regional coordinators. AI must not replace professional crisis support.</td></tr>
+    <tr><td>Political and governance</td><td>Could a government-run system become a surveillance tool or destroy trust?</td><td>Risk of state surveillance, unauthorized access, misuse of sensitive data, and compliance with Kazakhstan's AI and personal-data law.</td></tr>
+    <tr><td>Data ethics</td><td>Could an abuser see conversation histories, notifications or browsing activity?</td><td>Informed consent, data minimization, exposure on monitored devices, inaccurate AI answers, breaches of confidentiality.</td></tr>
+  </table></div>
+
+  <h3>Who should pay?</h3>
+  <p>A partnership: a public funding body paying for the pilot, with independent civil-society organizations and qualified providers controlling service standards, privacy safeguards and referral procedures. The separation matters. Survivors should not have to confess to a government-run chatbot just to learn what support exists.</p>
+
+  <h3>Data ethics</h3>
+  <p>Collect only what the purpose needs. Label AI output clearly and have humans review it. Never present incomplete regional statistics as proof that some communities are inherently more violent or less safe. The central risk is that an effort to improve access to information creates new misinformation, stigma, or surveillance.</p>
+
+  <p class="src" style="margin-top:2rem">₸30.36 million is a defensible illustrative figure, not an empirically verified estimate. Salaries, hosting, audits and comparable projects still need documented sources, and the capacity of existing support organizations to take more referrals has not been confirmed.</p>
+</section>
+
+<section class="wrap" id="verdict">
+  <span class="label">Final verdict</span>
+  <h2 class="fade">Only under conditions. And no substitute for the real thing.</h2>
+  <p class="fade">Kazakhstan could consider piloting Qorgau AI, but only on strict terms: a verified service directory, human-reviewed answers, independent security testing, and clear escalation to qualified professionals. Expansion should depend on evidence that it improves access without raising safety risks.</p>
+  <p class="fade">Its value lies in organizing fragmented public information and making regional gaps in support more visible. But AI has to be justified by demonstrated benefit, not novelty. If a plain database and interactive map can do the same job more accurately, safely and cheaply, the non-AI option is better. AI belongs only where it has a clear edge, such as multilingual document processing under human supervision.</p>
+  <p class="fade">Any version needs verified information, institutional accountability, funding for maintenance, and safeguards against collecting or exposing personal data.</p>
+  <blockquote class="fade">A digital platform cannot replace shelters, trained professionals, legal protection, or public investment in support services.</blockquote>
+  <p class="fade">AI may help identify and communicate regional information gaps. It is not a substitute for the institutional resources that domestic violence demands.</p>
+</section>
+
+<section class="wrap" id="ai">
+  <span class="label">AI transparency statement</span>
+  <p>This project was developed through collaboration between the student researcher and ChatGPT. I chose domestic violence and regional inequality in Kazakhstan as the topic, proposed the original title, developed the research question, collected the official statistics, and made the preliminary tables and visualizations. ChatGPT helped refine the research focus, identify methodological limitations, organize the website structure, and suggest analytical approaches. The proposed AI-assisted solution was developed through collaborative discussion and remains open to critical evaluation. I am responsible for verifying sources, reviewing statistical interpretations, and explaining the final analytical choices.</p>
+</section>
+
+<footer class="wrap">
+  <p><b>If you or someone you know is in danger,</b> call the national domestic violence helpline in Kazakhstan: <b>150</b>, or emergency services at <b>102</b>. Please check current local numbers.</p>
+  <p>PLS 419 final project. Qorgau AI is a concept, not a live service. Data: stat.gov.kz, UN Women, Schitaetsya.kz. Image © Schitaetsya.kz, used for academic commentary.</p>
+</footer>
+
+<script>
+const D={
+2025:[["Astana",105,356,157],["Almaty",79,399,140],["Shymkent",61,467,183],["Abay",37,140,98],["Almaty region",115,320,199],["Akmola region",54,185,104],["Aktobe",37,262,139],["Atyrau",45,184,87],["East Kazakhstan",64,156,148],["Karagandy",65,154,89],["Kostanay",30,144,89],["Kyzylorda",52,113,47],["Mangystau",35,150,72],["North Kazakhstan",27,94,89],["Pavlodar",42,106,71],["Turkistan",107,252,101],["Ulytau",22,70,44],["West Kazakhstan",61,230,110],["Zhambyl",50,193,99],["Zhetisu",34,171,107]],
+2017:[["Astana",28,284,106],["Almaty",48,263,123],["Shymkent",24,91,32],["Almaty region",87,236,141],["Akmola region",23,95,75],["Aktobe",34,85,37],["Atyrau",21,38,25],["East Kazakhstan",69,167,128],["Karagandy",81,183,131],["Kostanay",58,129,87],["Kyzylorda",27,41,18],["Mangystau",23,34,11],["North Kazakhstan",17,51,53],["Pavlodar",29,111,90],["Turkistan",41,105,39],["West Kazakhstan",26,76,61],["Zhambyl",42,88,53]]};
+const bars=document.getElementById('bars');
+function draw(y){
+  const rows=D[y].map(r=>({n:r[0],a:r[1],b:r[2],c:r[3],t:r[1]+r[2]+r[3]})).sort((p,q)=>q.t-p.t);
+  const max=rows[0].t, sum=rows.reduce((s,r)=>s+r.t,0);
+  document.getElementById('total').textContent=sum.toLocaleString('en')+' women';
+  document.getElementById('peak').textContent='reported in '+y+' · highest: '+rows[0].n+' ('+max+')';
+  bars.innerHTML=rows.map(r=>`<div class="row"><span class="n">${r.n}</span><div class="track" title="Under 18: ${r.a} · 18–39: ${r.b} · 40+: ${r.c}"><i class="a" data-w="${r.a/max*100}"></i><i class="b" data-w="${r.b/max*100}"></i><i class="c" data-w="${r.c/max*100}"></i></div><span class="v">${r.t}</span></div>`).join('');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>bars.querySelectorAll('i').forEach(i=>i.style.width=i.dataset.w+'%')));
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));draw(b.dataset.y)});
+draw(2025);
+// prototype
+const PW={
+ "Understand my legal rights":["Plain-language explanation of protective orders, reporting options and what happens after each step.","Legal rights"],
+ "Find local support organizations":["A verified list of crisis centers, shelters and legal aid near the chosen region, with capacity and contact details.","Local support"],
+ "Explore options without reporting to police":["Information on support that does not require a police report, and what each choice would and would not set in motion.","Options without reporting"]};
+function pw(){const r=document.getElementById('pr').value;
+ const l=document.querySelector('#pl [aria-pressed=true]').textContent;
+ const i=document.querySelector('#pi [aria-pressed=true]').textContent;
+ document.getElementById('pw').innerHTML=r+' · '+l+'<br><span style="color:var(--dim)">'+PW[i][0]+'</span>';}
+['pl','pi'].forEach(id=>document.querySelectorAll('#'+id+' button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#'+id+' button').forEach(x=>x.setAttribute('aria-pressed',x===b));pw()}));
+document.getElementById('pr').onchange=pw;pw();
+// budget
+const B=[["Website and AI development",7.2],["Human oversight and safety review",4.8],["Service directory maintenance",3.6],["Legal, privacy and security audits",3.0],["Hosting, AI API and infrastructure",2.4],["Training and community outreach",2.4],["Kazakh/Russian translation and accessibility",1.8],["Monitoring and evaluation",1.2]];
+document.getElementById('budget').innerHTML=B.map(([n,v])=>`<div class="brow"><span>${n}</span><span>₸${v.toFixed(1)}m</span><div class="bbar"><i style="width:${v/7.2*100}%"></i></div></div>`).join('')+
+ '<div class="brow sum"><span>Base cost</span><span>₸26.4m</span></div><div class="brow sum"><span>Contingency (15%)</span><span>₸3.96m</span></div><div class="brow sum"><span>Total</span><span>₸30.36m</span></div>';
+// calculator: core 15.0m + 2.0m per region + staffing + 600 per monthly user (₸50 x 12), then +15%
+const f=n=>'₸'+Math.round(n).toLocaleString('en-US');
+function calc(){const r=+rg.value,u=+us.value,st=+document.getElementById('st').value;
+ rgv.textContent=r;usv.textContent=u.toLocaleString('en-US');
+ const t=(15e6+2e6*r+st+u*50*12)*1.15;scen.textContent=f(t);return f(t)}
+['rg','us','st'].forEach(id=>document.getElementById(id).oninput=calc);calc();
+document.getElementById('cp').onclick=e=>{const t='Qorgau AI scenario (first year): '+calc()+' · '+rg.value+' regions · '+(+us.value).toLocaleString('en-US')+' users/month';
+ try{navigator.clipboard.writeText(t);e.target.textContent='Copied'}catch(_){e.target.textContent=t}};
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
